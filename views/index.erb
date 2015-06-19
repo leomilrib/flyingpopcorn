@@ -1,0 +1,20 @@
+<form action="/" method="post">
+  <input type="date" name="date" value="" />
+  <input type="text" name="cost" value="" placeholder="cost per day" />
+  <input type="text" name="charge" value="" placeholder="amount" />
+  <div>
+    <% [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturgday].each do |day| %>
+      <div class="">
+        <label for="<%= day %>"><%= day %>: </label>
+        <input id="<%= day %>" type="checkbox" name="week_day" value="<%= day %>" />
+      </div>
+    <% end %>
+  </div>
+  <input type="submit" value="Show me when!">
+</form>
+
+<div>
+  <span>
+    <%= @result if @result %>
+  </span>
+</div>
