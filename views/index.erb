@@ -1,16 +1,44 @@
 <form action="/" method="post">
-  <input type="date" name="date" value="" />
-  <input type="text" name="cost" value="" placeholder="cost per day" />
-  <input type="text" name="charge" value="" placeholder="amount" />
-  <div>
-    <% [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturgday].each do |day| %>
-      <div class="">
-        <label for="<%= day %>"><%= day %>: </label>
-        <input id="<%= day %>" type="checkbox" name="week_day" value="<%= day %>" />
-      </div>
-    <% end %>
+<div class="row">
+  <div class="twelve columns">
+    <input type="text" name="date" value="" placeholder="dd/mm/yyyy" />
   </div>
-  <input type="submit" value="Show me when!">
+</div>
+<div class="row">
+  <div class="six columns">
+    <input type="text" name="cost" value="" placeholder="cost per day" />
+  </div>
+  <div class="six columns">
+    <%= erb :buttons %>
+  </div>
+</div>
+<div class="row">
+  <div class="six columns">
+    <input type="text" name="charge" value="" placeholder="amount" />
+  </div>
+  <div class="six columns">
+    <%= erb :buttons %>
+  </div>
+</div>
+<div class="row">
+  <% [:sunday, :monday, :tuesday, :wednesday].each do |day| %>
+    <div class="three columns">
+      <label for="<%= day %>" class="button"><%= day %></label>
+      <input id="<%= day %>" class="hidden" type="checkbox" name="week_day" value="<%= day %>" />
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <% [:thursday, :friday, :saturgday].each do |day| %>
+    <div class="four columns">
+      <label for="<%= day %>" class="button"><%= day %></label>
+      <input id="<%= day %>" class="hidden" type="checkbox" name="week_day" value="<%= day %>" />
+    </div>
+  <% end %>
+</div>
+    <input type="submit" value="Show me when!">
+</div>
+
 </form>
 
 <div>
