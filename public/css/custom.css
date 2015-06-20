@@ -9,3 +9,28 @@ input.hidden {
 div.center {
   text-align: center;
 }
+
+div#ui-datepicker-div {
+  background-color: #ddd;
+  padding: 10px;
+  display: none;
+}
+
+span.ui-icon-circle-triangle-e,
+span.ui-icon-circle-triangle-w {
+  cursor: pointer;
+}
+
+span.ui-icon-circle-triangle-e {
+  background-image: 'images/glyphicons-chevron-right.png';
+  float: right;
+}
+
+span.ui-icon-circle-triangle-w {
+  background-image: 'images/glyphicons-chevron-left.png';
+  float: left;
+}
+
+div.ui-datepicker-title {
+  text-align: center;
+}
