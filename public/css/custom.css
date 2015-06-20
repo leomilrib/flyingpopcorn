@@ -22,15 +22,19 @@ span.ui-icon-circle-triangle-w {
 }
 
 span.ui-icon-circle-triangle-e {
-  background-image: 'images/glyphicons-chevron-right.png';
+  /*background-image: url('/images/glyphicons-chevron-right.png');*/
   float: right;
 }
 
 span.ui-icon-circle-triangle-w {
-  background-image: 'images/glyphicons-chevron-left.png';
+  /*background-image: url('/images/glyphicons-chevron-left.png');*/
   float: left;
 }
 
 div.ui-datepicker-title {
   text-align: center;
+}
+
+label.week_day {
+  padding: 0 10px;
 }

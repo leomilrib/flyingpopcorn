@@ -1,52 +1,58 @@
 <form action="/" method="post">
-<div class="row">
-  <div class="six columns">
-    <input type="date" name="date" value="" placeholder="dd/mm/yyyy">
-  </div>
-  <div class="six columns">
-    <input type="button" name="today" value="uh... today!">
-  </div>
-</div>
-<div class="row">
-  <div class="six columns">
-    <input type="number" class="u-full-width" name="cost" value="" placeholder="cost per day">
-  </div>
-  <div class="six columns">
-    <%= erb :buttons %>
-  </div>
-</div>
-<div class="row">
-  <div class="six columns">
-    <input type="number" class="u-full-width" name="charge" value="" placeholder="amount">
-  </div>
-  <div class="six columns">
-    <%= erb :buttons %>
-  </div>
-</div>
-<div class="row center">
-  <% [:sunday, :monday, :tuesday, :wednesday].each do |day| %>
-    <div class="three columns">
-      <% checked, active_week = (day != :sunday ) ? [' checked ', ' button-primary'] : ['',''] %>
-      <label for="<%= day %>" class="button<%= active_week %>"><%= day %></label>
-      <input id="<%= day %>" class="hidden" type="checkbox" <%= checked %> name="week_day" value="<%= day %>">
+  <div class="row">
+    <div class="twelve columns">
+      <label for="date">Charge date:</label>
+      <input type="text" id="date" class="u-full-width" name="date" value="<%= @today %>" placeholder="dd/mm/yyyy">
     </div>
-  <% end %>
-</div>
-<div class="row center">
-  <% [:thursday, :friday, :saturday].each do |day| %>
-    <div class="four columns">
-      <% checked, active_week = (day != :saturday ) ? [' checked ', ' button-primary'] : ['',''] %>
-      <label for="<%= day %>" class="button<%= active_week %>"><%= day %></label>
-      <input id="<%= day %>" class="hidden" type="checkbox" <%= checked %> name="week_day" value="<%= day %>">
-    </div>
-  <% end %>
-</div>
-<div class="row center">
-  <div class="twelve columns">
-    <input type="submit" value="Show me when!">
   </div>
-</div>
 
+  <div class="row">
+    <div class="twelve columns">
+      <label for="cost">Cost per day:</label>
+      <input type="number" id="cost" class="u-full-width" name="cost" value="" placeholder="cost per day">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <%= erb :buttons, locals: { field: 'cost' } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <label for="balance">Balance:</label>
+      <input type="number" id="balance" class="u-full-width" name="balance" value="" placeholder="balance">
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <%= erb :buttons, locals: { field: 'balance' } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <label>Usage:</label>
+    </div>
+  </div>
+
+  <div class="row center">
+    <div class="twelve columns">
+      <label></label>
+      <% [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday].each do |day| %>
+        <% checked, active_week = (day != :sunday && day != :saturday) ? [' checked ', ' button-primary'] : ['',''] %>
+        <label for="<%= day %>" class="button<%= active_week %> week_day"><%= day %></label>
+        <input id="<%= day %>" class="hidden" type="checkbox" <%= checked %> name="week_day" value="<%= day %>">
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row center">
+    <div class="twelve columns">
+      <input type="submit" value="Show me when!">
+    </div>
+  </div>
 </form>
 
 <div>

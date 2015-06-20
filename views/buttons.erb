@@ -1,3 +1,11 @@
 <% [1, 5, 10, 50].each do |value| %>
-  <input type="button" id="" value="+<%= value %>" />
+  <input
+    type="button"
+    id="<%= "#{field}-#{value}" %>"
+    class="u-max-full-width"
+    data-value="<%= value %>"
+    data-field="<%= field %>"
+    value="+<%= value %>"
+  >
 <% end %>
+<input type="button" id="<%= "#{field}-clear" %>" class="u-max-full-width" data-value="0" data-field="<%= field %>" value="Clear">
