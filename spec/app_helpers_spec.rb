@@ -6,7 +6,15 @@ describe 'app_helper' do
       {
         date: today.strftime('%d/%m/%y'),
         cost: '6',
-        balance: '36'
+        balance: '36',
+        week_days: [
+          'monday',
+          'tuesday',
+          'wednesday',
+          'thursday',
+          'friday',
+          'saturday'
+        ]
       }
     }
 
