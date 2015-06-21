@@ -1,0 +1,28 @@
+<table class="u-full-width">
+  <tr>
+    <th colspan="7" class="center">
+      <h3><%= result[:recharge_date].strftime("%B") %></h3>
+    </th>
+  </tr>
+  <tr>
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+  </tr>
+  <tr>
+    <% week_start = result[:recharge_date] - result[:recharge_date].wday %>
+    <% 7.times do |n| %>
+      <td>
+        <p><%= week_start.day %></p>
+        <% if week_start == result[:recharge_date] %>
+          <p><strong>Rechage!</strong></p>
+        <% end %>
+      </td>
+      <% week_start = week_start.next_day %>
+    <% end %>
+  </tr>
+</table>
