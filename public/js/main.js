@@ -14,7 +14,7 @@ $(function(){
         result = input_value + value
       }
 
-      input.val(result);
+      input.val(Math.round(result * 100) / 100);
     }
   });
 
