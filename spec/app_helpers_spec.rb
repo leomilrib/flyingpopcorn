@@ -23,7 +23,7 @@ describe 'app_helper' do
       result = calc_passes(params)
       puts result
       puts Date.today
-      expect(result[:recharge_date]).to eq((today + 7).to_s)
+      expect(result[:recharge_date]).to eq((today + 7))
     end
   end
 

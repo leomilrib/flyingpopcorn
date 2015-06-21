@@ -24,7 +24,7 @@ module Helpers
 
     {
       left: passes_left,
-      recharge_date: schedule_date.to_s
+      recharge_date: schedule_date
     }
   end
 
