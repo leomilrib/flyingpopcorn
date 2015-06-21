@@ -1,6 +1,7 @@
 module Helpers
 
   def calc_passes(params)
+# require 'pry';binding.pry    
     day, month, year = params[:date].split('/').map(&:to_i)
     charge_date = Date.new(year, month, day)
     cost = params[:cost].to_f
@@ -24,7 +25,7 @@ module Helpers
 
     {
       left: passes_left,
-      recharge: schedule_date.to_s
+      recharge_date: schedule_date.to_s
     }
   end
 
