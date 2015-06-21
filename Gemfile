@@ -9,6 +9,7 @@ gem 'unicorn'
 
 group :developmnet do
   gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :test do
