@@ -1,6 +1,6 @@
 <div class="row">
   <div class="twelve columns">
-    <%= @result if @result %>
+    <%= erb(:calendar, locals: { result: @result }) if @result %>
   </div>
 </div>
 
@@ -50,7 +50,7 @@
       <% [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday].each do |day| %>
         <% checked, active_week = (day != :sunday && day != :saturday) ? [' checked ', ' button-primary'] : ['',''] %>
         <label for="<%= day %>" class="button<%= active_week %> week_day"><%= day %></label>
-        <input id="<%= day %>" class="hidden" type="checkbox" <%= checked %> name="week_days" value="<%= day %>">
+        <input id="<%= day %>" class="hidden" type="checkbox" <%= checked %> name="week_days[]" value="<%= day %>">
       <% end %>
     </div>
   </div>

@@ -1,7 +1,6 @@
 module Helpers
 
   def calc_passes(params)
-require 'pry';binding.pry    
     day, month, year = params[:date].split('/').map(&:to_i)
     charge_date = Date.new(year, month, day)
     cost = params[:cost].to_f
@@ -17,7 +16,6 @@ require 'pry';binding.pry
 
     expended = days_passed * cost
     passes_left = passes - expended
-    qtdDiasFim = 0
 
     while passes_left > cost
       passes_left -= cost if used_day?(schedule_date, week_days)
